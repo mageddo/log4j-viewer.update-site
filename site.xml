@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <description name="Eclipse viewer for log4j logs" url="https://log4j-viewer.googlecode.com/hg/com.plugin.log4j.site/">
+<site
+      mirrorsURL="https://update-site.log4j-viewer.googlecode.com/hg/">
+   <description name="Eclipse viewer for log4j logs" url="https://update-site.log4j-viewer.googlecode.com/hg/">
       Log4j viewer update site. Latest features available at this location.
    </description>
    <feature url="features/com.plugin.log4j.feature_0.1.0.jar" id="com.plugin.log4j.feature" version="0.1.0" nl="en_GB,en_US">
