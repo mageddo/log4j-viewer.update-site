@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Eclipse viewer for log4j logs" url="https://log4j-viewer.googlecode.com/hg/com.plugin.log4j.site/">
+      Log4j viewer update site. Latest features available at this location.
+   </description>
+   <feature url="features/com.plugin.log4j.feature_0.1.0.jar" id="com.plugin.log4j.feature" version="0.1.0" nl="en_GB,en_US">
+      <category name="log4j-viewer"/>
+   </feature>
+   <feature url="features/com.log4j.feature_0.1.1.jar" id="com.log4j.feature" version="0.1.1" nl="en_GB,en_US">
+      <category name="log4j-viewer"/>
+   </feature>
+   <category-def name="log4j-viewer" label="Log4j viewer">
+      <description>
+         Represents logs, allow filtering, Hibernate returned parameters binding, etc.
+      </description>
+   </category-def>
+</site>
