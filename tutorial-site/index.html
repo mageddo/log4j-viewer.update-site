@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Log4j-viewer Tutorial</title>
+<link rel="stylesheet" href="default_style.css" type="text/css">
+</head>
+<body>
+
+<h1 style="font-family: arial;"><font class="indextop">Log4j-viewer for Eclipse (How to use)</font></h1>
+
+<ol>
+<li><a href="#Installation" class="jump">Installation</a>
+<li><a href="#Log4jConfiguration" class="jump">Log4j Configuration</a>
+<li><a href="#Usage" class="jump">Usage</a>
+	<ul>
+	<li><a href="#MainPrefs" class="jump">Main Preferences</a>
+	<li><a href="#AdditionalPrefs" class="jump">Additional Preferences</a>
+	<li><a href="#Filters" class="jump">Filters</a>
+	<li><a href="#LogViewDescr" class="jump">LogView Overview</a>
+	</ul>
+</ol>
+
+<table width="100%">
+<tr>
+<td bgcolor="#0080c0"><b><font size="3" color="#ffffff" face="Arial,Helvetica"><a name="Installation"></a>Installation</font></b></td>
+</tr>
+</table>
+
+<ol>
+<li>Install plugin using this update-site: <b>https://update-site.log4j-viewer.googlecode.com/hg/</b>
+<li>Restart Eclipse
+<li>Select <b>Window &gt; Show View &gt; Other &gt; Logging &gt; Log4j-Viewer</b>
+</ol>
+<img alt="Image of view selection" src="images/installation.png" hspace="6"><br>
+<ol start="4"><li>The initial LogView should look like this:<br></ol>
+<img alt="Image of initial LogView" src="images/installation_logview.png" hspace="6"><p>
+
+<table width="100%">
+<tr>
+	<td bgcolor="#0080c0"><b><font size="3" color="#ffffff" face="Arial, Helvetica"><a name="Log4jConfiguration"></a>Log4j Configuration</font></b></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+	<td><font face="arial, helvetica, geneva">Log4j-viewer uses socket connection to receive logs from clients. Clients should configure their log4j properties file for successful interaction. Default port is 4445, but you may also change it in Log4j-viewer preferences. Add this configuration to your log4j properties file:</font><br><br>
+<b>XML Format</b><br>
+
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>&lt;!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"&gt;<br><br>&lt;log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"&gt;<br> <br> &lt;appender name="Log4jViewer" class="org.apache.log4j.net.SocketAppender"&gt;<br>    &lt;param name="remoteHost" value="localhost"/&gt;<br>    &lt;param name="port" value="4445"/&gt;<br>    &lt;param name="locationInfo" value="true"/&gt;<br>  &lt;/appender&gt;<br>  <br>  &lt;root&gt;<br>    &lt;priority value="debug"/&gt;<br>    &lt;appender-ref ref="Log4jViewer"/&gt;<br>  &lt;/root&gt;<br>	<br>&lt;/log4j:configuration&gt;<br></pre>
+
+<b>Properties Format</b><br>
+<pre>log4j.rootCategory=DEBUG, Log4jViewer<br><br>log4j.appender.Log4jViewer=org.apache.log4j.net.SocketAppender<br>log4j.appender.Log4jViewer.remoteHost=localhost<br>log4j.appender.Log4jViewer.port=4445<br>log4j.appender.Log4jViewer.locationInfo=true</pre>
+	</td>
+</tr>
+</table>
+<br>
+
+<table width="100%">
+<tr>
+<td bgcolor="#0080c0"><b><font size="3" color="#ffffff" face="Arial,Helvetica"><a name="Usage"></a>Usage</font></b></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><font color="#717D7D" face="Arial,Helvetica"><a name="MainPrefs"></a><h4>Main Preferences</h4></font></td>
+</tr>
+</table>
+
+Select <b>Window &gt; Preferences &gt; Log4j-Viewer</b><p>
+<img alt="Image of main preferences" src="images/main_preferences.png" hspace="6"><br><p>
+Main preferences are devided into 3 parts:
+<dt><b>Server settings</b>
+	<dd>You can set a <b>Host</b> or <b>Port</b>. And there's a feature <b>Automatic start</b> to start server automatically when Eclipse is started.<p></dd><dt>
+<dt><b>Log File settings</b>
+	<dd>To read logs from text file, the contents of log file should followed the <b>Layout pattern</b>. You can simply copy it from your log4j.properties file, where you set layout to appender.<p></dd><dt>
+<dt><b>LogView output limitation</b>
+	<dd>Buffer for LogView to avoid 'Out Of Memory' errors with a large amount of logs. In <b>LogView buffer size (logs)</b> you can set a number of logs which will be displayed.<p></dd><dt>
+<table height="30"><tr></tr></table>
+
+<table>
+<tr>
+<td><font color="#717D7D" face="Arial,Helvetica"><a name="AdditionalPrefs"></a><h4>Additional Preferences</h4></font></td>
+</tr>
+</table>
+
+Select <b>Window &gt; Preferences &gt; Additional</b><p>
+<img alt="Image of main preferences" src="images/additional_preferences.png" hspace="6"><br><p>
+Additional preferences are devided into 2 parts:
+<dt><b>Log Table columns</b>
+	<dd>Provides simple configuration for Log table (where logs are displayed).<p></dd><dt>
+<dt><b>Level color</b>
+	<dd>Provides configuration for log level colors. Displayed logs will be coloured depending on those colors which you've choosen.<p></dd><dt>
+<table height="30"><tr></tr></table>
+
+
+<table>
+<tr>
+<td><font color="#717D7D" face="Arial,Helvetica"><a name="Filters"></a><h4>Filters</h4></td>
+</tr>
+</table>
+
+Select <b>Window &gt; Preferences &gt; Filters</b><p>
+<img alt="Image of main preferences" src="images/filters.png" hspace="6"><br><p>
+<table height="30"><tr></tr></table>
+
+
+<table>
+<tr>
+<td><font color="#717D7D" face="Arial,Helvetica"><a name="LogViewDescr"></a><h4>LogView Overview</h4></td>
+</tr>
+</table>
+
+Let's have a look into <b>LogView</b>. I've loaded some logs from text file:<p>
+<img alt="Image of main preferences" src="images/logview_description.png" hspace="6"><br><p>
+When we select any log in LogView table, <b>Detail LogView</b> is opened and displays more detail information about log:<p>
+<img alt="Image of main preferences" src="images/detail_logview.png" hspace="6"><br><p>
+<table height="30"><tr></tr></table>
+
+If you have any questions about <b>Log4j-viewer</b> installation or its usage, please, email me at: <a href="mailto:rd.ryly@gmail.com">rd.ryly@gmail.com</a> (Ruslan Diachenko).
+</body>
+</html>
