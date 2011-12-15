@@ -15,7 +15,7 @@
    <feature url="features/com.log4j.feature_0.2.1.jar" id="com.log4j.feature" version="0.2.1" nl="en_GB,en_US">
       <category name="log4j-viewer"/>
    </feature>
-   <feature url="features/com.log4j.feature_0.2.2.jar" id="com.log4j.feature" version="0.2.2" nl="en_GB,en_US">
+   <feature url="features/com.log4j.feature_2.2.2.jar" id="com.log4j.feature" version="2.2.2" nl="en_GB,en_US">
       <category name="log4j-viewer"/>
    </feature>
    <category-def name="log4j-viewer" label="Log4j viewer">
