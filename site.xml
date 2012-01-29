@@ -18,6 +18,9 @@
    <feature url="features/com.log4j.feature_2.2.2.jar" id="com.log4j.feature" version="2.2.2" nl="en_GB,en_US">
       <category name="log4j-viewer"/>
    </feature>
+   <feature url="features/com.log4j.feature_2.2.3.jar" id="com.log4j.feature" version="2.2.3" nl="en_GB,en_US">
+      <category name="log4j-viewer"/>
+   </feature>
    <category-def name="log4j-viewer" label="Log4j viewer">
       <description>
          Represents logs, allow filtering, Hibernate returned parameters binding, etc.
