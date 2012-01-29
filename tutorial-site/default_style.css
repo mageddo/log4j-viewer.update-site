@@ -1,0 +1,48 @@
+.jump:link {
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #8080FF;
+	text-decoration: none
+}
+
+.jump:hover {
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0000FF;
+	text-decoration: underline;
+	font-style: normal
+}
+
+li {
+	font-family: arial, helvetica, geneva;
+	font-size: 12pt
+}
+
+p,table,td,th {
+	font-family: arial, helvetica, geneva;
+	font-size: 12pt
+}
+
+h1 {
+	font-family: arial, helvetica, geneva;
+	font-size: 28px;
+	font-weight: bold
+}
+
+pre {
+	font-family: "Courier New", Courier, mono;
+	font-size: 10pt
+}
+
+body {
+	font-family: arial, helvetica, geneva;
+	font-size: 12pt;
+	clip: rect();
+	margin-top: 5mm;
+	margin-left: 3mm
+}
+
+h4 {
+	font-size: 18px;
+	font-weight: bold
+}
